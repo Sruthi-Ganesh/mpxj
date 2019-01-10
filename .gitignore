@@ -21,3 +21,7 @@
 /src.ruby/mpxj/Gemfile.lock
 /src.ruby/mpxj/.yardoc
 /src.ruby/mpxj/lib/mpxj/*.jar
+.gradle/
+.idea/libraries/Gradle__com_github_joniles_rtfparserkit_1_13_0.xml
+.idea/
+build/

@@ -1,0 +1,66 @@
+apply plugin : 'java'
+apply plugin : 'jacoco'
+apply plugin: 'com.github.johnrengelman.shadow'
+buildscript {
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.1'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+}
+
+group = "mpxj"
+version = "7.7.1.1"
+
+repositories {
+    mavenCentral()
+    maven {
+        // change to point to your repo, e.g. http://my.org/repo
+        url = uri("https://35.196.194.7")
+    }
+    maven { setUrl("https://repo.spring.io/milestone") }
+}
+
+dependencies {
+    compile "org.apache.poi:poi:3.17"
+    compile "org.xerial:sqlite-jdbc:3.8.10.1"
+    compile "com.jgoodies:jgoodies-binding:2.10.0"
+    compile "com.github.joniles:rtfparserkit:1.13.0"
+    testCompile "junit:junit:4.11"
+}
+clean {
+    doLast {
+        println "Cleaned."
+    }
+}
+def artifactID = "MPXJ"
+
+
+task deploy {
+    dependsOn clean, shadowJar
+}
+
+shadowJar {
+    baseName = 'MPXJ'
+    classifier = null
+    version = 1.0
+    dependencies {
+      
+    }
+}
+
+jacocoTestReport {
+
+    reports {
+        html.enabled = true
+        xml.enabled = true
+        csv.enabled = false
+        html.destination = "${buildDir}/reports/coverage"
+    }
+}
+

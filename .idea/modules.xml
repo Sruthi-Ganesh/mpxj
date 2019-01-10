@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MPXJ.iml" filepath="$PROJECT_DIR$/MPXJ.iml" />
-      <module fileurl="file://$PROJECT_DIR$/maven/maven.iml" filepath="$PROJECT_DIR$/maven/maven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mpxj.iml" filepath="$PROJECT_DIR$/.idea/modules/mpxj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mpxj_main.iml" filepath="$PROJECT_DIR$/.idea/modules/mpxj_main.iml" group="mpxj" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mpxj_test.iml" filepath="$PROJECT_DIR$/.idea/modules/mpxj_test.iml" group="mpxj" />
     </modules>
   </component>
 </project>
